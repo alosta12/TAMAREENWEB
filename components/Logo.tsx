@@ -8,25 +8,26 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored = true }) => {
   // ==============================================================================
-  // 🟢 PASTE YOUR LINKS HERE (Option 1 or Option 2)
+  // 🟢 LOCAL IMAGE SETUP
   // ==============================================================================
   
-  // Instructions: 
-  // 1. Upload to https://imgbb.com/ and get the "Direct Link" (ends in .png)
-  // 2. OR Convert to Base64 at https://www.base64-image.de/ and paste the long string here.
+  // 1. Place your official logo image in the 'public' folder and name it 'logo.png'
+  // 2. Place your icon image in the 'public' folder and name it 'icon.png'
+  // 3. The app will automatically load them from the paths below.
   
-  const logoUrl = ""; // e.g. "https://i.ibb.co/..." or "data:image/png;base64,..."
-  const iconUrl = ""; // e.g. "https://i.ibb.co/..."
+  const logoUrl = "/logo.png"; 
+  const iconUrl = "/icon.png";
   
   // ==============================================================================
 
   const [error, setError] = useState(false);
-  const hasCustomLogo = !error && logoUrl.length > 5 && iconUrl.length > 5;
+  // We assume custom logo exists if we have a path, but onError will flip this if file is missing
+  const hasCustomLogo = !error && logoUrl.length > 0;
 
   const barColor = colored ? "bg-brand-500" : "bg-current";
   const textColor = colored ? "text-white" : "text-current";
 
-  // The 3-bar icon mark (Fallback)
+  // The 3-bar icon mark (Fallback if image fails to load)
   const IconMark = () => (
     <div className="flex flex-col justify-center gap-[20%] h-full w-full">
       <div className={`h-[20%] w-full ${barColor} rounded-full`}></div>
@@ -44,7 +45,10 @@ const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored =
           alt="Tamareen Icon" 
           className={`object-contain ${className}`} 
           style={{ maxHeight: '100%', maxWidth: '100%' }}
-          onError={() => setError(true)}
+          onError={(e) => {
+            setError(true);
+            e.currentTarget.style.display = 'none'; // Hide broken image
+          }}
         />
       );
     }
@@ -63,12 +67,15 @@ const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored =
         alt="Tamareen Logo" 
         className={`object-contain ${className}`} 
         style={{ maxHeight: '100%', maxWidth: '100%' }}
-        onError={() => setError(true)}
+        onError={(e) => {
+          setError(true);
+          e.currentTarget.style.display = 'none'; // Hide broken image
+        }}
       />
     );
   }
 
-  // 3. FALLBACK TEXT LOGO
+  // 3. FALLBACK TEXT LOGO (Shown if images are missing or failed to load)
   return (
     <div className={`flex items-center gap-[0.1em] select-none ${className}`}>
       <span className={`font-black tracking-tighter leading-none ${textColor}`}>TAMAR</span>
