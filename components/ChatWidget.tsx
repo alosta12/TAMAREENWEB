@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Loader2 } from 'lucide-react';
+import { X, Send, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sendMessageToAgent } from '../services/geminiService';
 import { ChatMessage } from '../types';
@@ -11,7 +11,7 @@ const ChatWidget: React.FC = () => {
     {
       id: 'welcome',
       role: 'assistant',
-      content: "Hey there! Coach T here 💪 Ready to sweat? Ask me about finding a gym or booking a class!",
+      content: "Hey there! Ready to sweat? Ask me about finding a gym or booking a class!",
       timestamp: new Date()
     }
   ]);
@@ -42,7 +42,6 @@ const ChatWidget: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Prepare history for context
       const history = messages.map(m => ({
         role: m.role === 'user' ? 'user' : 'model',
         content: m.content
@@ -72,7 +71,8 @@ const ChatWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+    // Updated position: bottom-6 left-6 on mobile, bottom-6 right-6 on md+
+    <div className="fixed bottom-6 left-6 md:left-auto md:right-6 z-50 flex flex-col items-start md:items-end pointer-events-none">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -80,17 +80,17 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto mb-4 w-[350px] sm:w-[380px] bg-neutral-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[500px]"
+            className="pointer-events-auto mb-4 w-[300px] sm:w-[350px] bg-neutral-900 border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col h-[450px] md:h-[500px]"
           >
             {/* Header */}
             <div className="bg-brand-500 p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center border border-black/5">
-                   <Logo variant="icon" className="w-5 h-5" />
+                <div className="w-10 h-10 md:w-14 md:h-14 bg-black rounded-full flex items-center justify-center border border-black/5">
+                   <Logo variant="icon" className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-black text-lg leading-tight">Coach T</h3>
-                  <p className="text-xs text-brand-900 font-medium flex items-center">
+                  <h3 className="font-bold text-black text-base md:text-lg leading-tight">Tamareen Support</h3>
+                  <p className="text-[10px] md:text-xs text-brand-900 font-medium flex items-center">
                     <span className="w-2 h-2 bg-green-600 rounded-full mr-1 animate-pulse"></span>
                     Online
                   </p>
@@ -112,7 +112,7 @@ const ChatWidget: React.FC = () => {
                   className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-xs md:text-sm leading-relaxed ${
                       msg.role === 'user'
                         ? 'bg-brand-500 text-black font-medium rounded-br-none'
                         : 'bg-neutral-800 text-neutral-200 rounded-bl-none border border-white/5'
@@ -125,8 +125,8 @@ const ChatWidget: React.FC = () => {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="bg-neutral-800 rounded-2xl rounded-bl-none px-4 py-3 border border-white/5 flex items-center space-x-2">
-                    <Loader2 className="w-4 h-4 text-brand-400 animate-spin" />
-                    <span className="text-xs text-neutral-400">Coach is typing...</span>
+                    <Loader2 className="w-3 h-3 md:w-4 md:h-4 text-brand-400 animate-spin" />
+                    <span className="text-[10px] md:text-xs text-neutral-400">Tamareen is typing...</span>
                   </div>
                 </div>
               )}
@@ -141,8 +141,8 @@ const ChatWidget: React.FC = () => {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Ask about gyms, credits..."
-                  className="flex-1 bg-transparent border-none outline-none text-sm text-white placeholder-neutral-500"
+                  placeholder="Ask about gyms..."
+                  className="flex-1 bg-transparent border-none outline-none text-xs md:text-sm text-white placeholder-neutral-500"
                 />
                 <button
                   onClick={handleSend}
@@ -153,11 +153,8 @@ const ChatWidget: React.FC = () => {
                       : 'bg-neutral-700 text-neutral-500 cursor-not-allowed'
                   }`}
                 >
-                  <Send className="w-4 h-4" />
+                  <Send className="w-3 h-3 md:w-4 md:h-4" />
                 </button>
-              </div>
-              <div className="text-center mt-2">
-                <p className="text-[10px] text-neutral-600">Powered by Gemini AI</p>
               </div>
             </div>
           </motion.div>
@@ -166,7 +163,7 @@ const ChatWidget: React.FC = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="pointer-events-auto group flex items-center justify-center w-16 h-16 bg-neutral-900 text-brand-500 rounded-2xl shadow-lg shadow-brand-500/20 transition-all duration-300 active:scale-95 border-2 border-brand-500 hover:bg-neutral-800"
+        className="pointer-events-auto group flex items-center justify-center w-14 h-14 md:w-20 md:h-20 bg-neutral-900 text-brand-500 rounded-2xl shadow-lg shadow-brand-500/10 transition-all duration-300 active:scale-95 border border-white/10 hover:border-brand-500 hover:bg-neutral-800"
       >
         <AnimatePresence mode='wait'>
           {isOpen ? (
@@ -176,7 +173,7 @@ const ChatWidget: React.FC = () => {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X className="w-7 h-7" />
+              <X className="w-6 h-6 md:w-8 md:h-8" />
             </motion.div>
           ) : (
             <motion.div
@@ -185,7 +182,7 @@ const ChatWidget: React.FC = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
             >
-              <Logo variant="icon" className="w-8 h-8" />
+              <Logo variant="icon" className="w-8 h-8 md:w-12 md:h-12" />
             </motion.div>
           )}
         </AnimatePresence>

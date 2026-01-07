@@ -7,8 +7,8 @@ const StudioLanding: React.FC = () => {
       
       {/* 1. HERO SECTION - Compact & Clean */}
       <section className="relative py-12 md:py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center border-b border-white/5">
-         {/* Background Glow */}
-         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+         {/* Background Glow - Optimized */}
+         <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(171,226,37,0.1)_0%,transparent_70%)] pointer-events-none"></div>
          
          <div className="max-w-4xl mx-auto relative z-10">
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
@@ -90,6 +90,7 @@ const StudioLanding: React.FC = () => {
                         src={item.img} 
                         alt={item.text} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale contrast-125" 
+                        loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90"></div>
                     

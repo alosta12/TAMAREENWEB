@@ -13,8 +13,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
              <div onClick={() => onNavigate('user')} className="inline-block cursor-pointer mb-6 group hover:opacity-90 transition-opacity">
-                {/* Explicit height for image consistency */}
-                <Logo className="h-10 text-2xl" />
+                {/* Increased height to h-24 (approx 96px) for massive footer logo */}
+                <Logo className="h-24 w-auto text-4xl" />
               </div>
               <p className="text-neutral-500 text-sm leading-relaxed mb-6">
                 Redefining how you move. Join the movement and access the city's top fitness destinations with one wallet.

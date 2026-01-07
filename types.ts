@@ -18,6 +18,7 @@ export interface PricingTierProps {
   price: string;
   features: string[];
   isPopular?: boolean;
+  highlight?: boolean;
   ctaText: string;
 }
 

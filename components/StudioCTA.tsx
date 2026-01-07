@@ -10,8 +10,8 @@ const StudioCTA: React.FC<StudioCTAProps> = ({ onNavigate }) => {
     <section className="py-24 bg-gradient-to-br from-neutral-900 to-black border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-neutral-800/50 rounded-[40px] border border-white/10 p-8 md:p-16 relative overflow-hidden">
-          {/* Decorative Background */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+          {/* Decorative Background - Optimized */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(171,226,37,0.1)_0%,transparent_70%)] pointer-events-none"></div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
             <div>

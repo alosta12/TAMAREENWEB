@@ -10,7 +10,7 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     question: "How do credits work?",
-    answer: "Credits are your in-app currency to book classes. Each class has a credit value — usually between 3 and 12 credits. You use these credits to book any class at any partner studio."
+    answer: "Credits are your in-app currency to book classes. Each class has a credit value — usually between 12 and 40 credits. You use these credits to book any class at any partner studio."
   },
   {
     question: "Do credits expire?",
@@ -38,32 +38,32 @@ const faqs: FAQItem[] = [
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
            <div className="bg-neutral-900 p-3 rounded-xl border border-white/5">
             <span className="block text-xs text-brand-400 font-bold uppercase mb-1">Pilates Reformer</span>
-            <span className="text-white font-bold">6–10 credits</span>
+            <span className="text-white font-bold">24–40 credits</span>
           </div>
            <div className="bg-neutral-900 p-3 rounded-xl border border-white/5">
             <span className="block text-xs text-brand-400 font-bold uppercase mb-1">Boxing / Strength / HIIT</span>
-            <span className="text-white font-bold">5–9 credits</span>
+            <span className="text-white font-bold">20–36 credits</span>
           </div>
            <div className="bg-neutral-900 p-3 rounded-xl border border-white/5">
             <span className="block text-xs text-brand-400 font-bold uppercase mb-1">Premium Specialty</span>
-            <span className="text-white font-bold">8–12 credits</span>
+            <span className="text-white font-bold">32–48 credits</span>
           </div>
           <div className="bg-neutral-900 p-3 rounded-xl border border-white/5">
             <span className="block text-xs text-brand-400 font-bold uppercase mb-1">Yoga / Mat / Dance</span>
-            <span className="text-white font-bold">4–7 credits</span>
+            <span className="text-white font-bold">16–28 credits</span>
           </div>
           <div className="bg-neutral-900 p-3 rounded-xl border border-white/5">
             <span className="block text-xs text-brand-400 font-bold uppercase mb-1">Gym Day-Pass</span>
-            <span className="text-white font-bold">3–6 credits</span>
+            <span className="text-white font-bold">12–24 credits</span>
           </div>
         </div>
 
         <div className="mt-4 pt-4 border-t border-white/10">
           <p className="text-sm font-semibold text-white mb-2">Bundle Averages:</p>
           <ul className="space-y-2 text-sm text-neutral-400">
-            <li className="flex justify-between"><span className="text-white">Spark</span> <span>1–3 classes</span></li>
-            <li className="flex justify-between"><span className="text-white">Flow</span> <span>3–7 classes</span></li>
-            <li className="flex justify-between"><span className="text-white">Pulse</span> <span>6–14 classes</span></li>
+            <li className="flex justify-between"><span className="text-white">Spark (40cr)</span> <span>1–2 classes</span></li>
+            <li className="flex justify-between"><span className="text-white">Flow (105cr)</span> <span>3–5 classes</span></li>
+            <li className="flex justify-between"><span className="text-white">Pulse (220cr)</span> <span>7–10 classes</span></li>
           </ul>
         </div>
       </div>

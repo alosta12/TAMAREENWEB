@@ -8,15 +8,12 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored = true }) => {
   // ==============================================================================
-  // 🟢 LOCAL IMAGE SETUP
+  // 🟢 IMAGE SETUP
   // ==============================================================================
   
-  // 1. Place your official logo image in the 'public' folder and name it 'logo.png'
-  // 2. Place your icon image in the 'public' folder and name it 'icon.png'
-  // 3. The app will automatically load them from the paths below.
-  
-  const logoUrl = "/logo.png"; 
-  const iconUrl = "/icon.png";
+  // Using the direct Imgur link provided to ensure it loads immediately.
+  const logoUrl = "https://i.imgur.com/PkLebdo.png"; 
+  const iconUrl = "https://i.imgur.com/BaP54Ru.png";
   
   // ==============================================================================
 
