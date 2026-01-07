@@ -22,6 +22,7 @@ Knowledge Base:
     - **The Pulse**: $100. 220 Credits (20 Bonus). Valid for 90 days. Best value for active users.
 
 4. **Credit Usage & Classes**:
+    - **Rule of Thumb**: A standard class is approx. 30 credits.
     - **Pilates Reformer**: 24–40 credits
     - **Boxing / Strength / HIIT**: 20–36 credits
     - **Premium Specialty**: 32–48 credits
