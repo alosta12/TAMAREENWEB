@@ -39,16 +39,6 @@ const tiers: PricingTierProps[] = [
 ];
 
 const Pricing: React.FC = () => {
-  // Helper to determine order classes for mobile reordering
-  const getOrderClass = (index: number) => {
-    // Flow (index 1) -> First on mobile (order-1), Second on desktop (order-2)
-    if (index === 1) return 'order-1 md:order-2';
-    // Spark (index 0) -> Second on mobile (order-2), First on desktop (order-1)
-    if (index === 0) return 'order-2 md:order-1';
-    // Pulse (index 2) -> Third on mobile (order-3), Third on desktop (order-3)
-    return 'order-3 md:order-3';
-  };
-
   return (
     <section id="pricing" className="py-20 bg-black border-t border-white/5 relative overflow-hidden">
        {/* Decorative gradient - Optimized */}
@@ -67,17 +57,24 @@ const Pricing: React.FC = () => {
             </p>
         </div>
 
-        {/* Pricing Grid with Mobile Reordering */}
+        {/* Pricing Grid - Standard Order */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 items-end mb-16">
           {tiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative flex flex-col p-6 rounded-[24px] transition-all duration-300 ${getOrderClass(index)} ${
+              className={`relative flex flex-col p-6 rounded-[24px] transition-all duration-300 ${
                 tier.highlight
                   ? 'bg-brand-500 text-black shadow-[0_0_50px_rgba(171,226,37,0.3)] transform md:-translate-y-4 z-10'
                   : 'bg-neutral-900 border border-white/10 text-white hover:border-white/20'
               }`}
             >
+              {/* MOST POPULAR TAG */}
+               {tier.highlight && (
+                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-xl border border-black/10 z-20 whitespace-nowrap">
+                       Most Popular
+                   </div>
+               )}
+
               <div className="flex flex-col h-full">
                  <div className="mb-4">
                     <h3 className={`text-xl font-black uppercase italic mb-1 ${tier.highlight ? 'text-black' : 'text-white'}`}>{tier.name}</h3>
