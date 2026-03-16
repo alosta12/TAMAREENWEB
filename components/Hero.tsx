@@ -34,6 +34,9 @@ const Hero: React.FC = () => {
               <CheckCircle2 className="w-4 h-4 text-brand-500" /> Train anywhere
             </div>
             <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/5">
+              <CheckCircle2 className="w-4 h-4 text-brand-500" /> Intelligent workout logic
+            </div>
+            <div className="flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/5">
               <CheckCircle2 className="w-4 h-4 text-brand-500" /> No hidden fees
             </div>
           </div>

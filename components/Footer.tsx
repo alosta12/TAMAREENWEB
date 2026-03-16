@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Instagram, Facebook } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import Logo from './Logo';
 
 interface FooterProps {
@@ -52,12 +52,17 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-neutral-600 text-sm">
-            © {new Date().getFullYear()} Tamareen Inc. All rights reserved.
+            © {new Date().getFullYear()} Tamareen, a JECG Ventures SAL product. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="#" className="text-neutral-500 hover:text-brand-400 transition-colors"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="text-neutral-500 hover:text-brand-400 transition-colors"><Instagram className="w-5 h-5" /></a>
-            <a href="#" className="text-neutral-500 hover:text-brand-400 transition-colors"><Facebook className="w-5 h-5" /></a>
+            <a 
+              href="https://www.instagram.com/tamareen.app" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-neutral-500 hover:text-brand-400 transition-colors"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>

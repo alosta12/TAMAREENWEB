@@ -1,11 +1,17 @@
 import React from 'react';
-import { CalendarCheck, Wallet, Map, Activity, ShieldCheck, Zap } from 'lucide-react';
+import { CalendarCheck, Wallet, Map, Activity, ShieldCheck, Zap, Brain } from 'lucide-react';
 
 const featuresList = [
   {
     icon: Wallet,
     title: "One Credit. Any Studio.",
     description: "One credit wallet for all gyms and studios. Buy credits once — train anywhere.",
+    large: false
+  },
+  {
+    icon: Brain,
+    title: "Intelligent Training",
+    description: "Adaptive logic that learns your preferences to suggest the perfect workout at the right time.",
     large: false
   },
   {
@@ -24,12 +30,6 @@ const featuresList = [
     icon: ShieldCheck,
     title: "Fair & Secure Attendance",
     description: "Every booking generates a secure 5-digit attendance code for safe and fair check-ins.",
-    large: false
-  },
-  {
-    icon: Activity,
-    title: "Track Your Progress",
-    description: "Monitor your attendance, class history, and credit usage in one simple dashboard.",
     large: false
   },
   {
