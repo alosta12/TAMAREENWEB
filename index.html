@@ -3,7 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tamareen - Train Your Way</title>
+    <title>Tamareen - Train Your Way | One Credit. Any Studio.</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tamareen is the ultimate fitness platform. One credit wallet for all gyms and studios. Book classes, find gyms near you, and train your way without hidden fees." />
+    <meta name="keywords" content="fitness app, gym membership, workout classes, yoga, boxing, hiit, pilates, crossfit, studio booking" />
+    <meta name="author" content="Tamareen" />
+    <link rel="canonical" href="https://tamareen.app/" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tamareen.app/" />
+    <meta property="og:title" content="Tamareen - Train Your Way" />
+    <meta property="og:description" content="One credit wallet for all gyms and studios. Book classes, find gyms near you, and train your way." />
+    <meta property="og:image" content="https://i.imgur.com/PkLebdo.png" />
+
+    <!-- Structured Data: WebSite & Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Tamareen",
+      "url": "https://tamareen.app/",
+      "description": "One credit wallet for all gyms and studios."
+    }
+    </script>
+    
+    <!-- Structured Data: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is Tamareen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tamareen is a fitness platform that gives you a single credit wallet to access multiple gyms and studios. Buy credits once and train anywhere."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Are there any hidden fees or long-term lock-ins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. With Tamareen, there are no hidden fees, no setup fees, and no long-term lock-ins. You have the freedom to move and mix your workouts."
+        }
+      }, {
+        "@type": "Question",
+        "name": "How do I check into a class?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every booking generates a secure 5-digit attendance code for safe and fair check-ins at the studio."
+        }
+      }]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +118,20 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content for SEO crawlers that do not execute JavaScript -->
+      <div style="display: none;" aria-hidden="true">
+        <h1>Tamareen - Train Your Way. One Credit. Any Studio.</h1>
+        <p>Tamareen is the ultimate fitness platform. One credit wallet for all gyms and studios. Buy credits once and train anywhere. No hidden fees, no long-term lock-ins.</p>
+        <h2>Book in Seconds</h2>
+        <p>Secure your spot instantly with real-time class availability. Find classes near you. Filter by location, rating, amenities, and class type.</p>
+        <h2>Fair & Secure Attendance</h2>
+        <p>Every booking generates a secure 5-digit attendance code for safe and fair check-ins.</p>
+        <img src="https://i.imgur.com/PkLebdo.png" alt="Tamareen Logo - Fitness App" />
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1000&auto=format&fit=crop" alt="Fitness Background - Gym and Workout" />
+        <a href="https://tamareen.app/">Home</a>
+      </div>
+    </div>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>

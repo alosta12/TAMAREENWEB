@@ -99,6 +99,7 @@ const ChatWidget: React.FC = () => {
               <button 
                 onClick={() => setIsOpen(false)}
                 className="text-black/60 hover:text-black transition-colors bg-black/5 p-1 rounded-full hover:bg-black/10"
+                aria-label="Close chat"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -147,6 +148,7 @@ const ChatWidget: React.FC = () => {
                 <button
                   onClick={handleSend}
                   disabled={isLoading || !inputValue.trim()}
+                  aria-label="Send message"
                   className={`p-1.5 rounded-full transition-colors ${
                     inputValue.trim() 
                       ? 'bg-brand-500 text-black hover:bg-brand-400' 
@@ -163,6 +165,7 @@ const ChatWidget: React.FC = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close chat widget" : "Open chat widget"}
         className="pointer-events-auto group flex items-center justify-center w-14 h-14 md:w-20 md:h-20 bg-neutral-900 text-brand-500 rounded-2xl shadow-lg shadow-brand-500/10 transition-all duration-300 active:scale-95 border border-white/10 hover:border-brand-500 hover:bg-neutral-800"
       >
         <AnimatePresence mode='wait'>
