@@ -40,7 +40,8 @@ const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored =
         <img 
           src={iconUrl} 
           alt="Tamareen Icon" 
-          className={`object-contain ${className}`} 
+          draggable={false}
+          className={`object-contain select-none ${className}`} 
           style={{ maxHeight: '100%', maxWidth: '100%' }}
           onError={(e) => {
             setError(true);
@@ -62,7 +63,8 @@ const Logo: React.FC<LogoProps> = ({ className = "", variant = 'full', colored =
       <img 
         src={logoUrl} 
         alt="Tamareen Logo" 
-        className={`object-contain ${className}`} 
+        draggable={false}
+        className={`object-contain select-none ${className}`} 
         style={{ maxHeight: '100%', maxWidth: '100%' }}
         onError={(e) => {
           setError(true);
